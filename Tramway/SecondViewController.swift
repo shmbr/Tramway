@@ -8,17 +8,7 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-
-    @IBOutlet weak var label: UILabel!
-    
-    var randomShit: String?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Міський транспорт"
-        
-        if let shit = randomShit{
-            label.text = shit
-        }
     }
 }
