@@ -8,9 +8,10 @@
 import UIKit
 
 class ZeroViewController: UIViewController {
-    //@IBOutlet weak var trainCarNumberTextField: UITextField!
-    //@IBOutlet weak var ticketesAmountTextField: UITextField!
+    @IBOutlet weak var trainCarNumberTextField: UITextField!
+    @IBOutlet weak var ticketesAmountTextField: UITextField!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -19,9 +20,10 @@ class ZeroViewController: UIViewController {
         performSegue(withIdentifier: "fromZeroToFirst", sender: self)
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let destination = segue.destination as? FirstViewController{
-//            destination.randomShit  = trainCarNumberTextField.text
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? FirstViewController{
+            destination.buffer1  = trainCarNumberTextField.text
+            destination.buffer2  = ticketesAmountTextField.text
+        }
+    }
 }

@@ -8,35 +8,23 @@
 import UIKit
 
 class FirstViewController: UIViewController {
-
-    //@IBOutlet weak var textField: UITextField!
-    //@IBOutlet weak var label: UILabel!
     
-//    var randomShit: String?
+    var buffer1, buffer2: String?
     
     @IBAction func toSecondScreenButton(_ sender: Any) {
         performSegue(withIdentifier: "fromFirstToSecond", sender: self)
-
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //title = "Міський транспорт"
-        
-//        if let shit = randomShit{
-//            label.text = shit
-//        }
+        title = "Міський транспорт"
     }
-
-        
-//    @IBAction func mainButton(_ sender: Any) {
-//        performSegue(withIdentifier: "fromFirstToSecond", sender: self)
-//    }
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let destination = segue.destination as? SecondViewController{
-//            destination.randomShit  = textField.text
-//        }
-//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? SecondViewController{
+            destination.randomShit1  = buffer1
+            destination.randomShit2  = buffer2
+        }
+    }
 }
